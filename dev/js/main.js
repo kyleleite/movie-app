@@ -139,8 +139,9 @@ app.displayMoreInfo = function(singleMovie) {
 
 		if (screen.width() < 480) {
 			$('<div>').addClass('moreInfo moreInfoTop').insertAfter(event.target);
-		// } else if () {
-
+		// } else if (screen.width() < 768 && screen.width() > 480 ) {
+		// 	//do something useful~
+			
 		} else {
 			$('<div>').addClass('moreInfo moreInfoTop').insertAfter('img:nth-of-type(5)');
 		};
