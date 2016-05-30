@@ -55,6 +55,10 @@ h2 {
 	letter-spacing: 5px;
 }
 
+p {
+	line-height: 1.5;
+}
+
 .logo {
 	width: 100%;
 	img {
@@ -65,6 +69,7 @@ h2 {
 }
 .wrapper {
 	width: 80%;
+	max-width: 980px;
 	margin: 0 auto;
 }
 
@@ -72,6 +77,8 @@ h2 {
 .formContainer {
 	width: 100%;
 }
+
+
 form {
 	width: 100%;
 	select {
@@ -80,6 +87,7 @@ form {
 	width: 30%;
 	}
 }
+
 form p {
 	margin-bottom: 10px;
 	text-align: center;
@@ -87,6 +95,7 @@ form p {
 	font-weight: 300;
 	letter-spacing: 2px;
 }
+
 /* HEADER STYLINGS */
 header {
 	padding: 80px 0;
@@ -197,7 +206,7 @@ footer {
 .showTrailer {
 	width:100%;
 	text-align: right;
-	margin-right: 50px;
+	margin: 0 20px;
 }
 
 iframe {
@@ -211,6 +220,15 @@ iframe {
 	}
 
 @media (max-width: 768px) {
+	header {
+		padding: 250px 0;
+	}
+	
+	select.releaseYear {
+		color: white;
+		width: 200px;
+	}
+
 	.wrapper {
 		width:90%;
 	}
@@ -228,6 +246,20 @@ iframe {
 		padding: 20px;
 	} 
 
+	#movieBox .moreInfoTop, #movieBox .moreInfoBottom {
+		width: 85%;	
+		padding: 10px;
+		position: fixed;
+		top: 50px;
+		left: 50px;
+		right: 50px;
+		bottom: auto;
+		font-size: 80%; 
+		p {
+			margin: 3px 0;
+			line-height: 1.5;
+		}
+	}
 	
 	.infoPoster {
 		width: calc(50% - 20px);
@@ -251,6 +283,11 @@ iframe {
 		margin:0 auto;
 	}
 
+	.showTrailer {
+		text-align: center;
+		margin: 5px 0;
+	}
+	
 	.closeMoreInfo {
 		position:absolute;
 		top:5px;
@@ -266,21 +303,40 @@ iframe {
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+	header {
+		padding: 80px 0;
+	}
 
 	.moviePoster {
-		width: calc(100% - 20px);
-		margin: 10px;
+		width: 100%;
+		margin: 0 0 20px;
 		box-shadow: 0px 0px 20px black;
 	}
 
 	.moreInfo {
 		flex-direction: column;
+		margin: 0;
+
+	}
+
+	#movieBox .moreInfoTop, #movieBox .moreInfoBottom {
+		width: 100%;	
+		position: relative;
+		left: 0;
+		top: 0;
+		font-size: 90%; 
+		padding: 20px;
+		margin-bottom: 20px;
 	}
 
 	.infoContent {
 		width: 100%;
 		margin: 0;
+		p {
+			margin-bottom: 10px;
+		}
 	}
+
 
 	iframe {
 		width: 100%;
