@@ -25,10 +25,11 @@ var app = {};
 
 app.init = function () {
 
-	app.getData('2016');
+	app.getData('2015');
 
 	$('select').on('change', function () {
 		// grab user choice, store in a variable
+		$('#loadingAnimation').removeClass('hidden');
 		var year = $('select').val();
 
 		app.getData(year);
@@ -116,6 +117,7 @@ app.displayTopTen = function (movies) {
 
 		var img = $('<img>').addClass('moviePoster').attr('src', posterLink).data('movieObject', displayTopTen);
 
+		$('#loadingAnimation').addClass('hidden');
 		$('#movieBox').append(img);
 
 		// var movieTitle = displayTopTen.title;
@@ -132,7 +134,8 @@ app.displayMoreInfo = function (singleMovie) {
 
 		if (screen.width() < 480) {
 			$('<div>').addClass('moreInfo moreInfoTop').insertAfter(event.target);
-			// } else if () {
+			// } else if (screen.width() < 768 && screen.width() > 480 ) {
+			// 	//do something useful~
 		} else {
 				$('<div>').addClass('moreInfo moreInfoTop').insertAfter('img:nth-of-type(5)');
 			};
@@ -319,6 +322,16 @@ app.displayTrailer = function (youTubeKey) {
 
 	$('.moreInfo').append('<div class="showTrailer"></div>');
 	$('.showTrailer').append(videoFrame);
+	app.hideTheater();
+};
+
+// when user clicks on showTrailer it will exit theater movie
+app.hideTheater = function() {
+$('.showTrailer').on('click', function(){
+	console.log('ive been clicked');
+	$(this).addClass('hideTrailer');
+	$(this).empty();
+});
 };
 
 $(document).ready(function () {
